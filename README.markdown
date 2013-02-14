@@ -62,7 +62,7 @@ The icons are from Glyphish Pro which can be licensed for unlimited projects at 
 Acknowledgements
 ----------------
 
-This project was inspired by Zac Altman's ZAActivityBar project which can be found at https://github.com/zacaltman/ZAActivityBar/. Unlike Zac's project, I needed my activity bar to be linked to specific views (for examnple, per view controller) rather than global for the app.
+This project was inspired by Zac Altman's ZAActivityBar project which can be found at https://github.com/zacaltman/ZAActivityBar/. Unlike Zac's project, I needed my activity bar to be linked to specific views (for example, per view controller) rather than global for the app.
 
 License
 -------
