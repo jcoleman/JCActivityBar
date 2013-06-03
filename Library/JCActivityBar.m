@@ -2,8 +2,22 @@
 #import "JCActivityBarItemView.h"
 
 static CGFloat const kJCActivityBarItemAnimationDuration = 0.3;
-static CGFloat const kJCActivityBarMaxWidth = 300.0;
-static CGFloat const kJCActivityBarMaxHeight = 220.0;
+
+CGFloat JCActivityBarDefaultMaxWidth() {
+  if (([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)) {
+    return 600.0;
+  } else {
+    return 300.0;
+  }
+}
+
+CGFloat JCActivityBarDefaultMaxHeight() {
+  if (([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)) {
+    return 300.0;
+  } else {
+    return 220.0;
+  }
+}
 
 @interface JCActivityBar ()
 
@@ -18,8 +32,8 @@ static CGFloat const kJCActivityBarMaxHeight = 220.0;
 - (id) init {
   self = [super init];
   if (self) {
-    self.maxWidth = kJCActivityBarMaxWidth;
-    self.maxHeight = kJCActivityBarMaxHeight;
+    self.maxWidth = JCActivityBarDefaultMaxWidth();
+    self.maxHeight = JCActivityBarDefaultMaxHeight();
     self.clipsToBounds = NO;
   }
   return self;
@@ -73,10 +87,12 @@ static CGFloat const kJCActivityBarMaxHeight = 220.0;
   NSParameterAssert(view);
 
   self.offset = offset;
-  self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+  self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
+                          | UIViewAutoresizingFlexibleLeftMargin
+                          | UIViewAutoresizingFlexibleRightMargin;
   self.frame = CGRectMake(0.0, view.bounds.size.height - offset, view.bounds.size.width, 0.0);
-  self.maxWidth = fminf(kJCActivityBarMaxWidth, view.bounds.size.width);
-  self.maxHeight = fminf(kJCActivityBarMaxHeight, (view.bounds.size.height / 2.0));
+  self.maxWidth = fminf(JCActivityBarDefaultMaxWidth(), view.bounds.size.width);
+  self.maxHeight = fminf(JCActivityBarDefaultMaxHeight(), (view.bounds.size.height / 2.0));
 }
 
 - (void) animateIn:(JCActivityBarItemView*)itemView {
