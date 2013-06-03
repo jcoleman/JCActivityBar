@@ -37,7 +37,7 @@
   [self.view addSubview:self.activityBar];
 }
 
-- (IBAction) displayMessageButtonTapped:(UIButton*)sender {
+- (IBAction) displayMessageWithSuccessButtonTapped:(UIButton*)sender {
   [self.messageTextField resignFirstResponder];
 
   sender.enabled = NO;
@@ -47,6 +47,19 @@
   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     sender.enabled = YES;
     [self.activityBar finishWithSuccess:@"Finished! (With rather long explanatory message that will likely overflow onto multiple lines.)"];
+  });
+}
+
+- (IBAction) displayMessageWithErrorButtonTapped:(UIButton*)sender {
+  [self.messageTextField resignFirstResponder];
+
+  sender.enabled = NO;
+  [self.activityBar displayActivityWithMessage:self.messageTextField.text];
+  float delayInSeconds = self.secondsDelayStepper.value;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    sender.enabled = YES;
+    [self.activityBar finishWithError:@"Error message."];
   });
 }
 

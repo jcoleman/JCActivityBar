@@ -53,12 +53,13 @@ static CGFloat const kJCActivityBarItemViewPadding = 10.0;
   CGSize messageSize = [message sizeWithFont:self.messageLabel.font
                            constrainedToSize:CGSizeMake(maxMessageWidth, maxMessageHeight)];
 
-  messageSize.height = fmaxf(messageSize.height, kJCActivityBarItemViewImageSize);
+  CGFloat width = fmaxf(messageSize.width, kJCActivityBarItemViewImageSize)
+    + (kJCActivityBarItemViewPadding * 3)
+    + kJCActivityBarItemViewImageSize;
+  CGFloat height = fmaxf(messageSize.height, kJCActivityBarItemViewImageSize)
+    + (kJCActivityBarItemViewPadding * 2);
 
-  messageSize.width = maxWidth;
-  messageSize.height += (kJCActivityBarItemViewPadding * 2);
-
-  return messageSize;
+  return CGSizeMake(width, height);
 }
 
 @end
