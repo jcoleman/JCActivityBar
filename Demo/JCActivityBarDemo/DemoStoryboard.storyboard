@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="edY-Gd-9Hl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="edY-Gd-9Hl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Activity Bar Demo View Controller - UIView 1-->
@@ -36,7 +36,7 @@
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uva-u4-Opp">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Display Message">
+                                <state key="normal" title="Display Message (with success)">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,23 +44,39 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="displayMessageButtonTapped:" destination="FDF-4a-ylu" eventType="touchUpInside" id="Ab3-Zd-elQ"/>
+                                    <action selector="displayMessageWithSuccessButtonTapped:" destination="FDF-4a-ylu" eventType="touchUpInside" id="5Yh-1M-3Tj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5X-5Y-00c">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Display Message (with error)">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayMessageWithErrorButtonTapped:" destination="FDF-4a-ylu" eventType="touchUpInside" id="2OK-eo-beC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gh5-l2-sQG" firstAttribute="leading" secondItem="AEW-EA-U1b" secondAttribute="leading" type="default" id="03H-P2-lCI"/>
+                            <constraint firstItem="N5X-5Y-00c" firstAttribute="leading" secondItem="uva-u4-Opp" secondAttribute="leading" type="default" id="0CL-f4-n9Q"/>
                             <constraint firstItem="z5P-eH-9ky" firstAttribute="centerY" secondItem="6aJ-Hy-Lo5" secondAttribute="centerY" type="default" id="3Wj-Az-eIM"/>
                             <constraint firstItem="6aJ-Hy-Lo5" firstAttribute="top" secondItem="Abw-1C-Xon" secondAttribute="top" constant="154" id="4OC-K3-Pjn"/>
+                            <constraint firstItem="uva-u4-Opp" firstAttribute="trailing" secondItem="N5X-5Y-00c" secondAttribute="trailing" type="default" id="5Ju-dU-mFN"/>
                             <constraint firstItem="uva-u4-Opp" firstAttribute="centerX" secondItem="gh5-l2-sQG" secondAttribute="centerX" type="default" id="5YI-Zz-bRA"/>
                             <constraint firstItem="uva-u4-Opp" firstAttribute="centerY" secondItem="Abw-1C-Xon" secondAttribute="centerY" type="default" id="AjH-aJ-4Dx"/>
                             <constraint firstItem="gh5-l2-sQG" firstAttribute="top" secondItem="AEW-EA-U1b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gxm-Cn-Qp7"/>
                             <constraint firstItem="AEW-EA-U1b" firstAttribute="top" secondItem="Abw-1C-Xon" secondAttribute="top" constant="69" id="HJO-3m-Onz"/>
                             <constraint firstItem="z5P-eH-9ky" firstAttribute="leading" secondItem="gh5-l2-sQG" secondAttribute="leading" type="default" id="Ndm-yO-Ud9"/>
+                            <constraint firstItem="N5X-5Y-00c" firstAttribute="top" secondItem="uva-u4-Opp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RAP-gh-sY6"/>
                             <constraint firstItem="6aJ-Hy-Lo5" firstAttribute="trailing" secondItem="gh5-l2-sQG" secondAttribute="trailing" type="default" id="TLw-nD-RGw"/>
-                            <constraint firstItem="gh5-l2-sQG" firstAttribute="centerX" secondItem="Abw-1C-Xon" secondAttribute="centerX" type="default" id="aJg-km-AzZ"/>
                             <constraint firstItem="6aJ-Hy-Lo5" firstAttribute="leading" secondItem="z5P-eH-9ky" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bSc-PO-d16"/>
+                            <constraint firstItem="uva-u4-Opp" firstAttribute="centerX" secondItem="Abw-1C-Xon" secondAttribute="centerX" type="default" id="zAi-Ei-aJe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="UIView 1" id="gEM-i6-5Ma"/>
@@ -123,9 +139,9 @@
                                     <action selector="secondsDelayStepperValueChanged:" destination="Q2q-ha-fiQ" eventType="valueChanged" id="IHD-HC-Si9"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWt-HE-kLM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebm-Vm-gPd">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Display Message">
+                                <state key="normal" title="Display Message (with success)">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -133,21 +149,37 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="displayMessageButtonTapped:" destination="Q2q-ha-fiQ" eventType="touchUpInside" id="5RT-bV-X1J"/>
+                                    <action selector="displayMessageWithSuccessButtonTapped:" destination="Q2q-ha-fiQ" eventType="touchUpInside" id="oZY-oc-7do"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYI-NC-qs3">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Display Message (with error)">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayMessageWithSuccessButtonTapped:" destination="Q2q-ha-fiQ" eventType="touchUpInside" id="x8j-6L-uca"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="M8q-zu-GtL" firstAttribute="leading" secondItem="ERq-v1-yQR" secondAttribute="leading" type="default" id="1fQ-Yy-udR"/>
+                            <constraint firstItem="Ebm-Vm-gPd" firstAttribute="centerY" secondItem="wHf-Jw-hS2" secondAttribute="centerY" type="default" id="7Tc-Zu-CMo"/>
                             <constraint firstItem="z8m-Nm-IZJ" firstAttribute="top" secondItem="wHf-Jw-hS2" secondAttribute="top" constant="154" id="C3m-3V-m5D"/>
-                            <constraint firstItem="AWt-HE-kLM" firstAttribute="centerX" secondItem="M8q-zu-GtL" secondAttribute="centerX" type="default" id="Frw-lg-UXC"/>
+                            <constraint firstItem="nYI-NC-qs3" firstAttribute="leading" secondItem="Ebm-Vm-gPd" secondAttribute="leading" type="default" id="IYp-Mz-cmF"/>
+                            <constraint firstItem="nYI-NC-qs3" firstAttribute="trailing" secondItem="Ebm-Vm-gPd" secondAttribute="trailing" type="default" id="It2-al-33I"/>
+                            <constraint firstItem="Ebm-Vm-gPd" firstAttribute="centerX" secondItem="M8q-zu-GtL" secondAttribute="centerX" type="default" id="JU2-XK-Ol3"/>
                             <constraint firstItem="ERq-v1-yQR" firstAttribute="top" secondItem="wHf-Jw-hS2" secondAttribute="top" constant="69" id="TKn-dm-L5d"/>
+                            <constraint firstItem="Ebm-Vm-gPd" firstAttribute="centerX" secondItem="wHf-Jw-hS2" secondAttribute="centerX" type="default" id="UY5-So-PxE"/>
+                            <constraint firstItem="nYI-NC-qs3" firstAttribute="top" secondItem="Ebm-Vm-gPd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XKo-PG-XJA"/>
                             <constraint firstItem="M8q-zu-GtL" firstAttribute="top" secondItem="ERq-v1-yQR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ye5-hO-vjh"/>
                             <constraint firstItem="z8m-Nm-IZJ" firstAttribute="leading" secondItem="Qf2-ng-vye" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Zdg-mx-Fv9"/>
                             <constraint firstItem="Qf2-ng-vye" firstAttribute="leading" secondItem="M8q-zu-GtL" secondAttribute="leading" type="default" id="hdd-D1-gyp"/>
-                            <constraint firstItem="AWt-HE-kLM" firstAttribute="centerY" secondItem="wHf-Jw-hS2" secondAttribute="centerY" type="default" id="jMM-o6-hTj"/>
-                            <constraint firstItem="AWt-HE-kLM" firstAttribute="centerX" secondItem="wHf-Jw-hS2" secondAttribute="centerX" type="default" id="lW5-gQ-Jl8"/>
                             <constraint firstItem="z8m-Nm-IZJ" firstAttribute="centerY" secondItem="Qf2-ng-vye" secondAttribute="centerY" type="default" id="lZX-bW-mpu"/>
                             <constraint firstItem="z8m-Nm-IZJ" firstAttribute="trailing" secondItem="M8q-zu-GtL" secondAttribute="trailing" type="default" id="tBP-0O-09K"/>
                         </constraints>
@@ -168,7 +200,8 @@
         <class className="JCActivityBarDemoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JCActivityBarDemoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="displayMessageButtonTapped:" candidateClass="UIButton"/>
+                <relationship kind="action" name="displayMessageWithErrorButtonTapped:" candidateClass="UIButton"/>
+                <relationship kind="action" name="displayMessageWithSuccessButtonTapped:" candidateClass="UIButton"/>
                 <relationship kind="action" name="secondsDelayStepperValueChanged:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="messageTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="secondsDelayLabel" candidateClass="UILabel"/>
